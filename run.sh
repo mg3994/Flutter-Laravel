@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the current directory
-current_dir=$(pwd)
+current_dir=$(dirname "$(pwd)")
 
 # Create the content of the dev.nix file
 cat <<EOF > dev.nix
