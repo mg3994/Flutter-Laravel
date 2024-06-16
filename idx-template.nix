@@ -22,10 +22,12 @@ in {
       # mv flutter "$out/.flutter-sdk/flutter"
       # echo ".flutter-sdk/flutter" >> "$out/.gitignore"
       mkdir -p "$out/.idx"
+      mv run.sh "$out/.idx"
+      cd "$out/.idx"
       chmod +x run.sh
       sh run.sh
       chmod +x dev.nix
-      mv dev.nix "$out/.idx"
+      cd "$out"
       
       
     '';
