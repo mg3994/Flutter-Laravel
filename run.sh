@@ -41,10 +41,10 @@ cat <<EOF > dev.nix
        
         onCreate = {
           build-flutter = ''
-            #  cd ${flutterProjectDir}/android # you can't echo but just in case
-             echo "Changing directory to ${flutterProjectDir}/android"
+            #  cd \${flutterProjectDir}/android # you can't echo but just in case
+             echo "Changing directory to \${flutterProjectDir}/android"
 
-             cd ${flutterProjectDir}/android || { echo "Failed to change directory"; exit 1; }
+             cd \${flutterProjectDir}/android || { echo "Failed to change directory"; exit 1; }
 
             echo "Switching to Flutter master channel"
             flutter channel master || { echo "Failed to switch Flutter channel"; exit 1; }
@@ -55,7 +55,7 @@ cat <<EOF > dev.nix
               --parallel \\
               -Pverbose=true \\
               -Ptarget-platform=android-x86 \\
-              -Ptarget=${flutterProjectDir}/lib/main.dart \\
+              -Ptarget=\${flutterProjectDir}/lib/main.dart \\
               -Pbase-application-name=android.app.Application \\
               -Pdart-defines=RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC85NzU1MDkwN2I3MGY0ZjNiMzI4YjZjMTYwMGRmMjFmYWMxYTE4ODlhLw== \\
               -Pdart-obfuscation=false \\
