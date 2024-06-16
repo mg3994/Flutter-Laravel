@@ -57,7 +57,7 @@ cat <<EOF > dev.nix
               -Ptarget-platform=android-x86 \\
               -Ptarget=${flutterProjectDir}/lib/main.dart \\
               -Pbase-application-name=android.app.Application \\
-              -Pdart-defines=RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC85NzU1MDkwN2I3MGY0ZjNiMzI4YjZjMTYwMGRmMjFmYWMxYTE4ODlhLw== \\\
+              -Pdart-defines=RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC85NzU1MDkwN2I3MGY0ZjNiMzI4YjZjMTYwMGRmMjFmYWMxYTE4ODlhLw== \\
               -Pdart-obfuscation=false \\
               -Ptrack-widget-creation=true \\
               -Ptree-shake-icons=false \\
