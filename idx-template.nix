@@ -2,6 +2,7 @@
 let 
   flutter = pkgs.fetchzip {
     url = "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.22.2-stable.tar.xz";
+    hash = "sha256-1MNsakGh9idMUR8bSDu7tVpZB6FPn6nmtvc+Gi10+SA=";
   };
   
 in {
