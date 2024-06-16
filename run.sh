@@ -10,8 +10,8 @@ cat <<EOF > dev.nix
   # see: https://developers.google.com/idx/guides/customize-idx-env
   {pkgs}:
   let
-    flutterProjectDir = "$current_dir"; # Define your Flutter project directory here
-    laravelProjectDir = "$current_dir"; # Define your Laravel project directory here
+    flutterProjectDir = "${current_dir}_flutter"; # Define your Flutter project directory here
+    laravelProjectDir = "${current_dir}_laravel"; # Define your Laravel project directory here
   in 
   {
     # Which nixpkgs channel to use.
@@ -51,17 +51,17 @@ cat <<EOF > dev.nix
             flutter upgrade || { echo "Failed to upgrade Flutter"; exit 1; }
 
             echo "Running gradlew assembleDebug"
-            ./gradlew \
-              --parallel \
-              -Pverbose=true \
-              -Ptarget-platform=android-x86 \
-              -Ptarget=${flutterProjectDir}/lib/main.dart \
-              -Pbase-application-name=android.app.Application \
-              -Pdart-defines=RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC85NzU1MDkwN2I3MGY0ZjNiMzI4YjZjMTYwMGRmMjFmYWMxYTE4ODlhLw== \
-              -Pdart-obfuscation=false \
-              -Ptrack-widget-creation=true \
-              -Ptree-shake-icons=false \
-              -Pfilesystem-scheme=org-dartlang-root \
+            ./gradlew \\
+              --parallel \\
+              -Pverbose=true \\
+              -Ptarget-platform=android-x86 \\
+              -Ptarget=${flutterProjectDir}/lib/main.dart \\
+              -Pbase-application-name=android.app.Application \\
+              -Pdart-defines=RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC85NzU1MDkwN2I3MGY0ZjNiMzI4YjZjMTYwMGRmMjFmYWMxYTE4ODlhLw== \\\
+              -Pdart-obfuscation=false \\
+              -Ptrack-widget-creation=true \\
+              -Ptree-shake-icons=false \\
+              -Pfilesystem-scheme=org-dartlang-root \\
               assembleDebug
 
             # TODO: Execute web build in debug mode.
