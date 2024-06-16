@@ -104,6 +104,6 @@ cat <<EOF > dev.nix
 EOF
 
 # Set the permissions for the file
-install --mode u+rw dev.nix
+
 
 echo "dev.nix file created and permissions set."
