@@ -22,13 +22,17 @@ in {
       # mv flutter "$out/.flutter-sdk/flutter"
       # echo ".flutter-sdk/flutter" >> "$out/.gitignore"
       mkdir -p "$out/.idx"
-      mv run.sh "$out/.idx/"
+      curl -L -o "$out/.idx/run.sh" "https://raw.githubusercontent.com/mg3994/Flutter-Laravel/main/run.sh"
+      chmod +x "$out/.idx/run.sh"
+      # Execute run.sh script
       cd "$out/.idx"
       chmod +x run.sh
-      sh run.sh
-      # delete run.sh
+      ./run.sh
+      # Optionally delete run.sh after execution
       rm run.sh
+      # Make dev.nix executable
       chmod +x dev.nix
+      # Return to $out directory
       cd "$out"
       
       
