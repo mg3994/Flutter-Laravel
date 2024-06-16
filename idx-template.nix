@@ -17,15 +17,17 @@ in {
     bootstrap = ''
       cp -rf ${flutter} flutter
       chmod -R u+w flutter
-      PUB_CACHE=/tmp/pub-cache ./flutter/bin/flutter create "$out"
-      #mkdir -p "$out"/.{flutter-sdk,idx}
+      # PUB_CACHE=/tmp/pub-cache ./flutter/bin/flutter create "$out"
+      # mkdir -p "$out"/.{flutter-sdk,idx}
       # mv flutter "$out/.flutter-sdk/flutter"
       # echo ".flutter-sdk/flutter" >> "$out/.gitignore"
       mkdir -p "$out/.idx"
-      mv run.sh "$out/.idx"
+      mv run.sh "$out/.idx/"
       cd "$out/.idx"
       chmod +x run.sh
       sh run.sh
+      # delete run.sh
+      rm run.sh
       chmod +x dev.nix
       cd "$out"
       
