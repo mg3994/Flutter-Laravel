@@ -18,12 +18,15 @@ in {
       cp -rf ${flutter} flutter
       chmod -R u+w flutter
       PUB_CACHE=/tmp/pub-cache ./flutter/bin/flutter create "$out"
-      mkdir -p "$out"/.{flutter-sdk,idx}
-      mv flutter "$out/.flutter-sdk/flutter"
-      echo ".flutter-sdk/flutter" >> "$out/.gitignore"
+      #mkdir -p "$out"/.{flutter-sdk,idx}
+      # mv flutter "$out/.flutter-sdk/flutter"
+      # echo ".flutter-sdk/flutter" >> "$out/.gitignore"
       mkdir -p "$out/.idx"
       chmod +x run.sh
-      ./run.sh
-      install --mode u+rw  "$out"/.idx/dev.nix
+      sh run.sh
+      chmod +x dev.nix
+      mv dev.nix "$out/.idx"
+      
+      
     '';
 }
