@@ -34,7 +34,7 @@ in {
       chmod +x dev.nix
       # Return to $out directory
       cd "$out"
-      code "$out"/"$WS_NAME"_flutter
+      
       
       
     '';
