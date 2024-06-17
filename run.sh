@@ -10,8 +10,8 @@ cat <<EOF > dev.nix
   # see: https://developers.google.com/idx/guides/customize-idx-env
   {pkgs}:
   let
-    flutterProjectDir = "${current_dir}_flutter"; # Define your Flutter project directory here
-    laravelProjectDir = "${current_dir}_laravel"; # Define your Laravel project directory here
+    flutterProjectDir = "${current_dir}/${current_dir##*/}_flutter"; # Define your Flutter project directory here
+    laravelProjectDir = "${current_dir}/${current_dir##*/}_laravel"; # Define your Laravel project directory here
   in 
   {
     # Which nixpkgs channel to use.
@@ -106,4 +106,12 @@ EOF
 # Set the permissions for the file
 
 
-echo "dev.nix file created and permissions set."
+echo "dev.nix file created => permissions to set."
+
+
+
+
+
+
+
+
