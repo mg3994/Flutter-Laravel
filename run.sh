@@ -53,7 +53,7 @@ cat <<EOF > dev.nix
             echo "Changing directory to \${flutterProjectDir}/android"
 
             cd \${flutterProjectDir}/android || { echo "Failed to change directory"; exit 1; }
-
+            # As there is no need of this ./gradlew command but we are jsut checking time to build , if it fails don't worry
             echo "Running gradlew assembleDebug"
             ./gradlew \\
               --parallel \\
