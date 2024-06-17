@@ -12,6 +12,8 @@ in {
         pkgs.xz
         pkgs.git
         pkgs.busybox
+        pkgs.php82
+        pkgs.php82Packages.composer
     ];
 
     bootstrap = ''
