@@ -44,13 +44,15 @@ cat <<EOF > dev.nix
         onCreate = {
           build-flutter = ''
             #  cd \${flutterProjectDir}/android # you can't echo but just in case
-             echo "Changing directory to \${flutterProjectDir}/android"
 
-             cd \${flutterProjectDir}/android || { echo "Failed to change directory"; exit 1; }
 
             echo "Switching to Flutter master channel"
             flutter channel master || { echo "Failed to switch Flutter channel"; exit 1; }
             flutter upgrade || { echo "Failed to upgrade Flutter"; exit 1; }
+            
+            echo "Changing directory to \${flutterProjectDir}/android"
+
+            cd \${flutterProjectDir}/android || { echo "Failed to change directory"; exit 1; }
 
             echo "Running gradlew assembleDebug"
             ./gradlew \\
@@ -77,11 +79,8 @@ cat <<EOF > dev.nix
         
         # To run something each time the workspace is (re)started, use the \`onStart\` hook
       # Runs when the workspace is (re)started
-        onStart = {
-         
-     
-          
-        };
+      # onStart = {
+      # };
      
       };
       # Enable previews and customize configuration
