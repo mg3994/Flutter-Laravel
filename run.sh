@@ -34,6 +34,8 @@ cat <<EOF > dev.nix
         "Dart-Code.flutter"
         "Dart-Code.dart-code"
         # "vscodevim.vim"
+        "bmewburn.vscode-intelephense-client"
+        "onecentlin.laravel-extension-pack"
       ];
 
       workspace = {
