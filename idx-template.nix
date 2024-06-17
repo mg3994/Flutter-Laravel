@@ -17,7 +17,8 @@ in {
     bootstrap = ''
       cp -rf ${flutter} flutter
       chmod -R u+w flutter
-      PUB_CACHE=/tmp/pub-cache ./flutter/bin/flutter create --org com.antinna --project-name "$WS_NAME" "$out"/"$WS_NAME"_flutter  
+      PUB_CACHE=/tmp/pub-cache ./flutter/bin/flutter create --org com.antinna --project-name "$WS_NAME" "$out"/"$WS_NAME"_flutter
+      composer create-project --prefer-dist laravel/laravel "$out"/"$WS_NAME"_laravel
       # mkdir -p "$out"/.{flutter-sdk,idx}
       # mv flutter "$out/.flutter-sdk/flutter"
       # echo ".flutter-sdk/flutter" >> "$out/.gitignore"
